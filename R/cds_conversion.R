@@ -120,7 +120,7 @@ importCDS <- function(otherCDS, import_all = FALSE) {
     requireNamespace("Seurat")
     data <- otherCDS@raw.data
 
-    if(is.data.frame(data)) {
+    if(inherits(data, "data.frame")) {
       data <- as(as.matrix(data), "sparseMatrix")
     }
     
