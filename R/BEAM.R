@@ -200,7 +200,7 @@ buildBranchCellDataSet <- function(cds,
   
   progenitor_pseudotime_order <- order(pData[common_ancestor_cells, 'Pseudotime'])
   
-  if (progenitor_method == 'duplicate') {
+  if (any(progenitor_method == 'duplicate')) {
     ancestor_exprs <- exprs(cds)[,common_ancestor_cells]
     expr_blocks <- list()
     
